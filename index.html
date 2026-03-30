@@ -1,135 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pravin C V | Freelance Full Stack Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pravin C V | Freelance Developer</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  scroll-behavior: smooth;
+}
 
-    header {
-      text-align: center;
-      padding: 70px 20px;
-      background: linear-gradient(135deg, #020617, #1e293b);
-    }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #020617, #1e293b);
+  animation: fadeIn 1.2s ease-in;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-    }
+h1 {
+  font-size: 2.8rem;
+  margin: 0;
+}
 
-    header p {
-      color: #94a3b8;
-      margin: 10px 0;
-      font-size: 1.1rem;
-    }
+.subtitle {
+  color: #94a3b8;
+  margin: 10px 0;
+}
 
-    .contact a {
-      color: #38bdf8;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
-    }
+.highlight {
+  color: #38bdf8;
+  font-weight: bold;
+}
 
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+/* CTA BUTTON */
+.cta {
+  margin-top: 20px;
+}
 
-    h2 {
-      border-left: 5px solid #38bdf8;
-      padding-left: 10px;
-      margin-bottom: 20px;
-    }
+.cta a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+.cta a:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    .card:hover {
-      background: #334155;
-      transform: translateY(-5px);
-    }
+h2 {
+  border-left: 5px solid #38bdf8;
+  padding-left: 10px;
+}
 
-    .card a {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 8px 14px;
-      background: #38bdf8;
-      color: black;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* SERVICES */
+.skills span {
+  display: inline-block;
+  background: #38bdf8;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 6px;
+  font-weight: bold;
+}
 
-    .card a:hover {
-      background: #0ea5e9;
-    }
+/* PROJECT GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
 
-    .skills span {
-      display: inline-block;
-      background: #38bdf8;
-      color: black;
-      padding: 6px 12px;
-      border-radius: 20px;
-      margin: 5px;
-      font-size: 0.9rem;
-      font-weight: bold;
-    }
+/* CARD */
+.card {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      color: #64748b;
-    }
-  </style>
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background: #334155;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.card-content {
+  padding: 15px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  color: #64748b;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>PRAVIN C V</h1>
-  <p>Freelance Full Stack Developer</p>
+  <p class="subtitle">Freelance Full Stack Developer</p>
 
   <p>
-    4+ years of experience in cross-platform app development, backend systems, 
-    real-time communication, and deployment to Play Store, App Store, and cloud hosting.
+    <span class="highlight">4+ years experience</span> in Flutter, Node.js, IoT systems,
+    real-time apps, and deployment to Play Store, App Store, and cloud.
   </p>
 
-  <div class="contact">
-    <a href="tel:+919965104306">📞 Call</a>
-    <a href="mailto:pravincv29@gmail.com">📧 Email</a>
-    <a href="https://www.linkedin.com/in/pravin-cv" target="_blank">🔗 LinkedIn</a>
+  <div class="cta">
+    <a href="https://wa.me/919965104306" target="_blank">💬 Hire Me (WhatsApp)</a>
+    <a href="mailto:pravincv29@gmail.com">📧 Email Me</a>
   </div>
 </header>
 
 <section>
   <h2>Services</h2>
   <div class="skills">
-    <span>Flutter App Development</span>
+    <span>Flutter Apps</span>
     <span>Node.js Backend</span>
-    <span>Firebase Integration</span>
-    <span>REST APIs</span>
+    <span>Firebase</span>
     <span>WebSockets & MQTT</span>
-    <span>App Store Deployment</span>
+    <span>API Development</span>
+    <span>App Deployment</span>
     <span>Website Hosting</span>
     <span>IoT Solutions</span>
   </div>
@@ -141,38 +185,48 @@
   <div class="grid">
 
     <div class="card">
-      <h3>EVCP</h3>
-      <p>Real-time EV charging platform using Node.js, WebSockets, and MQTT.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.chargepartnersindia.chargepartners&hl=en_IN" target="_blank">🚀 View App</a>
+      <img src="https://play-lh.googleusercontent.com/placeholder" alt="">
+      <div class="card-content">
+        <h3>EVCP</h3>
+        <p>EV charging platform with real-time communication.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.chargepartnersindia.chargepartners" target="_blank">View App</a>
+      </div>
     </div>
 
     <div class="card">
-      <h3>Growkindly</h3>
-      <p>Scalable Flutter app with Firebase and Node.js backend.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.growkindly.growkindly" target="_blank">📱 Play Store</a>
+      <img src="https://play-lh.googleusercontent.com/placeholder" alt="">
+      <div class="card-content">
+        <h3>Growkindly</h3>
+        <p>Scalable Flutter app with Firebase backend.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.growkindly.growkindly" target="_blank">View App</a>
+      </div>
     </div>
 
     <div class="card">
-      <h3>Turf Aura</h3>
-      <p>Turf booking application with real-time slot management.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.tezfo.turfaura" target="_blank">📱 Play Store</a>
+      <img src="https://play-lh.googleusercontent.com/placeholder" alt="">
+      <div class="card-content">
+        <h3>Turf Aura</h3>
+        <p>Booking app with real-time slot system.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.tezfo.turfaura" target="_blank">View App</a>
+      </div>
     </div>
 
     <div class="card">
-      <h3>Turf Aura Venue Manager</h3>
-      <p>Booking management system for turf owners.</p>
-      <a href="https://apps.apple.com/in/app/turf-aura-venue-manager/id6746345434" target="_blank">🍎 App Store</a>
+      <img src="https://play-lh.googleusercontent.com/placeholder" alt="">
+      <div class="card-content">
+        <h3>Venue Manager</h3>
+        <p>Owner dashboard for booking management.</p>
+        <a href="https://apps.apple.com/in/app/turf-aura-venue-manager/id6746345434" target="_blank">View App</a>
+      </div>
     </div>
 
     <div class="card">
-      <h3>Galaxy Mechanic & Inspection</h3>
-      <p>App for mechanics to manage service jobs, inspections, and job cards.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.galaxy.mechanic" target="_blank">📱 Play Store</a>
-    </div>
-
-    <div class="card">
-      <h3>Custom CRM</h3>
-      <p>Zoho-integrated CRM built with Flutter Web and Node.js.</p>
+      <img src="https://play-lh.googleusercontent.com/placeholder" alt="">
+      <div class="card-content">
+        <h3>Galaxy Mechanic</h3>
+        <p>Inspection & job card management system.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.galaxy.mechanic" target="_blank">View App</a>
+      </div>
     </div>
 
   </div>
@@ -181,6 +235,23 @@
 <footer>
   <p>© 2026 Pravin C V | Freelance Developer</p>
 </footer>
+
+<script>
+// Scroll animation
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    if (cardTop < triggerBottom) {
+      card.classList.add('visible');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
